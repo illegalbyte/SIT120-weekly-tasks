@@ -1,0 +1,39 @@
+main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+		"a a"
+		"b c"
+		"d e";
+	margin: 10px 10px;
+}
+
+.text-center {
+	text-align: center;
+}
+.image-center {
+	display: block;
+	margin: auto;
+}
+
+.header {
+	grid-area: a;
+}
+
+.column1 {
+	grid-area: b;
+}
+
+.column2 {
+	grid-area: c;
+}
+
+td {
+	padding: 0 50px;
+}
+
+
+
+* {
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
