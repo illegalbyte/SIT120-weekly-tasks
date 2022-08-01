@@ -2,12 +2,8 @@ function gettime() {
 	document.getElementById("timebutton").innerHTML = "The time is " + new Date().toLocaleTimeString();
 }
 
-// var app = new Vue({
-// 	el: '#app',
-// 	data: {
-// 		message: 'Hello Vue!'
-// 	}
-// })
+
+
 
 
 function week3_js() {
@@ -57,4 +53,3 @@ function week3_js() {
 
 
 }
-week3_js();
