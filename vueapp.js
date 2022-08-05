@@ -37,5 +37,11 @@ var app = new Vue({
 		toggleExpanded: function () {
 			this.expanded = !this.expanded;
 		},
+		deleteTranscription: function (id) {
+			// remove index from array this.transcriptions:
+			let index = this.transcriptions.indexOf(id);
+			this.transcriptions.splice(index);
+			
+		},
 	}
 })
