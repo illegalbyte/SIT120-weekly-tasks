@@ -1,42 +1,35 @@
+/* content layout */
 main {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas: 
-		"a a"
-		"x x"
-		"b c"
-		"d e";
+		"h1 h1 h2"
+		"a a a"
+		"b c d";
 	margin: 10px 10px;
 }
 
+/* utility classes */
 .text-center {
 	text-align: center;
 }
-.image-center {
-	display: block;
-	margin: auto;
-}
 
-.header {
-	grid-area: a;
+.image-center {
 	display: block;
 	margin: auto;
 }
 
 /* logo and site title */
 #sitetitle {
-	vertical-align: middle;
+	vertical-align: top;
 	display: inline-block;
 }
-#github {
-	width: 3em;
-	height: auto;
-	display: inline;
-	position: relative;
-	vertical-align: middle;
-	color:cornflowerblue;
 
+#logoimage {
+	vertical-align: top;
+	display: inline-block;
 }
+
 
 /* Navbar CSS */
 
@@ -51,7 +44,6 @@ main {
 	}
 	
 	.navbar {
-		grid-area: x;
 		width: 100%;
 	}
 	
@@ -62,7 +54,7 @@ main {
 		margin: 0;
 		width: 100%;
 		background-color: #e95353;
-		border: 1px solid #555;
+
 	}
 	.navbar > ul > li {
 		display: inline-block;
@@ -83,12 +75,11 @@ main {
 
 	/* Change the link color on hover */
 	li a:hover {
-		background-color: #555;
-		color: white;
+		color: rgb(49, 49, 49);
 	}
 
 	.active > * {
-		color: white;
+		color: #FF7504;
 		font-weight: bold;
 		text-decoration: underline;
 	}
@@ -96,9 +87,7 @@ main {
 	
 /* navbar desktop and tablet */
 @media screen and (min-width: 601px) {
-	.navbar {
-		grid-area: x;
-	}
+
 	
 	.navbar > ul {
 		list-style: none;
@@ -112,7 +101,7 @@ main {
 	
 	.navbar > ul > li > a {
 		text-decoration: none;
-		color: #fff;
+		color: black;
 	}
 	
 	ul {
@@ -120,7 +109,7 @@ main {
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
-		background-color: #333;
+
 	}
 
 	li {
@@ -129,35 +118,132 @@ main {
 
 	li a {
 		display: block;
-		color: white;
+		color: black;
 		text-align: center;
 		padding: 14px 16px;
 		text-decoration: none;
 	}
 
+	.active>* {
+		color: #FF7504 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
 
 }
+
 
 
 
 a {
 	text-decoration: none;
-	color:cornflowerblue;
+	color: #FF7504;
+}
+
+/* column and container grid parameters */
+
+.header-left {
+	grid-area: h1;
+	display: block;
+
+}
+
+.header-right {
+	grid-area: h2;
+	display: block;
+	margin: auto;
 }
 
 .column1 {
+	grid-area: a;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.column2-1 {
 	grid-area: b;
 }
 
-.column2 {
+.column2-2 {
 	grid-area: c;
 }
 
-td {
-	padding: 0 50px;
+.column2-3 {
+	grid-area: d;
 }
 
+/* font family */
 
 * {
 	font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* formatting for transcription button */
+
+button#transcribebutton {
+	color: #0f0f0f;
+	background-color: #70f6be;
+	font-size: 39px;
+	height: 100px;
+	font-style: bold;
+	border: 1px solid #6BE9B4;
+	border-radius: 25px;
+	padding: 15px 50px;
+	cursor: pointer;
+	box-shadow: 2px 0px 10px #bebebe80;
+	
+}
+button#transcribebutton > * {
+	font-size: 49px;
+	vertical-align: middle;
+}
+
+button#transcribebutton:hover {
+	color: #646464;
+	background-color: #76ffc6;
+
+}
+
+/* transcription text input box */
+
+#transcriptiontextbox {
+	display: block;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-size: large;
+	width: 600px;
+	font-style: italic;
+	font-family: 'Times New Roman', Times, serif;
+	border: 0px solid;
+	border-radius: 10px;
+	padding: 15px 50px;
+	box-shadow: 2px 0px 10px #bebebe;
+}
+
+#searchbar {
+	display: block;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-size: large;
+	border-color: #e95353;
+	border-width: 10px;
+	width: 75%;
+	font-style: italic;
+	font-family: 'Times New Roman', Times, serif;
+	border: 0px solid;
+	border-radius: 50px;
+	padding: 15px 50px;
+	box-shadow: 2px 0px 10px #bebebe;
+}
+
+/* saved / historical transcriptions */
+
+.savedtranscription {
+	width: auto;
+	background-color: #d8d8d837;
+	border-radius: 10px;
+	margin-bottom: 20px;
 }
