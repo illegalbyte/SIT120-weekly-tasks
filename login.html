@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MeetScribe</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+	<main id="app">
+		<div class="header-left">
+			<a href="https://github.com/illegalbyte/SIT120-weekly-tasks">
+				<h1 id="sitetitle">MeetScribe!</h1>
+				<img src="img/Group 12logo.png" id="logoimage" alt="MeetScribe Logo">
+			</a>
+
+		</div>
+		<div class="navbar header-right">
+			<ul>
+				<li class="active"><a href="/index.html">Home</a></li>
+				<li><a href="/contact.html">Contact</a></li>
+				<li><a href="/about.html">About</a></li>
+				<li><a href="/signup.html">Sign Up</a></li>
+				<li><a href="/login.html">Login</a></li>
+			</ul>
+		</div>
+		<div class="column1 text-center">
+			<h3>Login</h3>
+            <!-- vue login form -->
+            <form action="#" method="post">
+                <div>
+                    <label for="email">email</label>
+                    <input v-model="email" type="text" id="email" name="email" placeholder="Enter email">
+                    <p>User: {{email}}</p>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input v-model="password" type="password" id="password" name="password" placeholder="Enter password">
+                    <p>Password: {{password}}</p>
+                </div>
+                <div>
+                    <input type="checkbox" id="checkbox" name="checkbox" v-model="logincheckbox">
+                    <label for="checkbox">Remember me? {{logincheckbox}}</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+		</div>
+	</main>
+	<script src="javascript.js"></script>
+	<script src="vueapp.js"></script>
+</body>
+</html>
