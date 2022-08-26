@@ -46,6 +46,15 @@
                     <input type="checkbox" id="checkbox" name="checkbox" v-model="logincheckbox">
                     <label for="checkbox">Remember me? {{logincheckbox}}</label>
                 </div>
+				<div>
+					<label for="selectmenu">Select a user type:</label>
+					<select v-model="selected" id="selectmenu">
+						<option v-for="option in options" v-bind:value="option.value">
+							{{ option.text }}
+						</option>
+					</select>
+					<span>Selected: {{ selected }}</span>
+				</div>
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>
 		</div>

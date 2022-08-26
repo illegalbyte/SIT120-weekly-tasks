@@ -21,9 +21,17 @@ var app = new Vue({
 				text: "The well-known probable early avialan, Archaeopteryx, dates from slightly later Jurassic rocks (about 155 million years old) from Germany. Many of these early avialans shared unusual anatomical features that may be ancestral to modern birds, but were later lost during bird evolution. These features include enlarged claws on the second toe which may have been held clear of the ground in life, and long feathers or 'hind wings' covering the hind limbs and feet, which may have been used in aerial manoeuvreing.",
 			},
 		],
+		// login values
 		email: "",
 		password: "",
 		logincheckbox: false,
+		// used for v-for select and options
+		selected: 'A',
+		options: [
+			{ text: "Personal", value: "A"},
+			{ text: "Professional", value: "B"},
+			{ text: "Commercial", value: "C"},
+		],
 	},
 	computed: {
 		reverseMessage: function () {
