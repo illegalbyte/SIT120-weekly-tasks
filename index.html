@@ -38,10 +38,11 @@
 		<div class="column2-1 text-center">			
 			<!-- <h1>Column 2-1</h1> -->
 			
-			<div class="savedtranscription" v-for="transcription in transcriptions" :key="transcription.id">
-				<h2>{{transcription.title}}</h2>
+			<div class="savedtranscription" v-for="transcript in transcriptions" :key="transcript.id">
+				<!-- <h2>{{transcription.title}}</h2>
 				<p>{{transcription.text}}</p>
-				<button type="button" name="transcribebutton" v-on:click="deleteTranscription(transcription.id)">Delete</button>
+				<button type="button" name="transcribebutton" v-on:click="deleteTranscription(transcription.id)">Delete</button> -->
+				<transcriptionbox :transcription="transcript" v-on:deletetranscript="deleteTranscription($event)"></transcriptionbox>
 			</div>
 			
 

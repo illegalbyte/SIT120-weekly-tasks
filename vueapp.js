@@ -1,3 +1,15 @@
+var transcriptionbox = {
+	template: '<div><h2>{{transcription.title}}</h2> <p> {{ transcription.text }}</p><button type="button" name="transcribebutton" v-on:click="emitdeleteTranscription(transcription.id)">Delete</button></div>',
+	props: ['transcription'],
+	methods: {
+		emitdeleteTranscription: function (id) {
+			this.$emit('deletetranscript', id);
+			console.log(id);
+		}
+	},
+
+}
+
 var app = new Vue({
 	el: '#app',
 	data: {
@@ -50,9 +62,14 @@ var app = new Vue({
 		},
 		deleteTranscription: function (id) {
 			// remove index from array this.transcriptions:
+			console.log("deleting id" + id)
 			let index = this.transcriptions.indexOf(id);
-			this.transcriptions.splice(index);
-			
+			this.transcriptions.splice(index);	
 		},
-	}
+
+	},
+	components: {
+		transcriptionbox: transcriptionbox,
+	},
+
 })
