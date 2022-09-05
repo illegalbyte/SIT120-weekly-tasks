@@ -1,3 +1,12 @@
+// global vue2 component
+Vue.component('sitetitle', {
+	template: '<div class="header-left"><a href="https://github.com/illegalbyte/SIT120-weekly-tasks"><h1 id="sitetitle">MeetScribe!</h1><img src="img/Group 12logo.png" id="logoimage" alt="MeetScribe Logo"></a></div><div class="navbar header-right"><ul><li class="active"><a href="/index.html">Home</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/about.html">About</a></li><li><a href="/signup.html">Sign Up</a></li><li><a href="/login.html">Login</a></li></ul></div>'
+})
+Vue.component('navbar', {
+	template: '<div class="navbar header-right"><ul><li class="active"><a href="/index.html">Home</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/about.html">About</a></li><li><a href="/signup.html">Sign Up</a></li><li><a href="/login.html">Login</a></li></ul></div>'
+})
+
+
 var transcriptionbox = {
 	template: '<div><h2>{{transcription.title}}</h2> <p> {{ transcription.text }}</p><button type="button" name="transcribebutton" v-on:click="emitdeleteTranscription(transcription.id)">Delete</button></div>',
 	props: ['transcription'],
@@ -7,7 +16,6 @@ var transcriptionbox = {
 			console.log(id);
 		}
 	},
-
 }
 
 var app = new Vue({
