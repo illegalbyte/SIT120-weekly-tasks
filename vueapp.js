@@ -7,8 +7,15 @@ Vue.component('navbar', {
 })
 
 
+Vue.directive('rainbow', {
+	bind(el, binding, vnode) {
+		el.style.color = "#" + Math.random().toString(16).slice(2, 8);
+	}
+});
+
+
 var transcriptionbox = {
-	template: '<div><h2>{{transcription.title}}</h2> <p> {{ transcription.text }}</p><button type="button" name="transcribebutton" v-on:click="emitdeleteTranscription(transcription.id)">Delete</button></div>',
+	template: '<div><h2 v-rainbow>{{transcription.title}}</h2> <p> {{ transcription.text }}</p><button type="button" name="transcribebutton" v-on:click="emitdeleteTranscription(transcription.id)">Delete</button></div>',
 	props: ['transcription'],
 	methods: {
 		emitdeleteTranscription: function (id) {
