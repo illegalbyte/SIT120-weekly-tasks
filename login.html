@@ -29,9 +29,15 @@
 			</ul>
 		</div>
 		<div class="column1 text-center">
-			<h3>Login</h3>
+			
+			<h3 v-if="!newuser">Login</h3>
+			<h3 v-if="newuser">Signup</h3>
+			
             <!-- vue login form -->
             <form action="#" method="post">
+				<!-- checkbox asking if new user click here -->
+				<input type="checkbox" id="newuser" name="newuser" v-model="newuser">
+				<label for="newuser">New User? Click here</label><br>
                 <div>
                     <label for="email">email</label>
                     <input v-model="email" type="text" id="email" name="email" placeholder="Enter email">
@@ -46,7 +52,7 @@
                     <input type="checkbox" id="checkbox" name="checkbox" v-model="logincheckbox">
                     <label for="checkbox">Remember me? {{logincheckbox}}</label>
                 </div>
-				<div>
+				<div v-if="newuser">
 					<label for="selectmenu">Select a user type:</label>
 					<select v-model="selected" id="selectmenu">
 						<option v-for="option in options" v-bind:value="option.value">
@@ -55,7 +61,10 @@
 					</select>
 					<span>Selected: {{ selected }}</span>
 				</div>
-                <button type="submit" class="btn btn-primary">Login</button>
+				<br>
+				<hr>
+                <button v-if="!newuser" type="submit">Login</button>
+				<button v-if="newuser" type="submit">Sign Up</button>
             </form>
 		</div>
 	</main>

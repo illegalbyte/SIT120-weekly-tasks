@@ -1,0 +1,31 @@
+{
+  "scripts": {
+    "start": "babel src --out-dir dist --watch"
+  },
+  "dependencies": {
+    "vue-easy-toast": "^1.0.5",
+    "vuejs-noty": "^0.1.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.3",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "name": "sit120-weekly-tasks",
+  "description": "",
+  "version": "1.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/illegalbyte/SIT120-weekly-tasks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/illegalbyte/SIT120-weekly-tasks/issues"
+  },
+  "homepage": "https://github.com/illegalbyte/SIT120-weekly-tasks#readme"
+}

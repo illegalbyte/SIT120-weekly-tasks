@@ -7,6 +7,7 @@
 	<title>MeetScribe</title>
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-toastify@latest" type="module"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
@@ -15,26 +16,28 @@
 		<sitetitle></sitetitle>
 		<navbar></navbar>
 		<div class="column1 text-center">
-			<button id="transcribebutton" type="button" name="transcribestartbutton"><span class="material-icons">history_edu</span> Start Transcription</button>
+			<button @click="writeTranscription" id="transcribebutton" type="button" name="transcribestartbutton"><span class="material-icons">history_edu</span> Start Transcription</button>
 			<!-- transcription box -->
-			<textarea id="transcriptiontextbox" rows="4" placeholder="Transcript will appear here..."></textarea>
+			<textarea id="transcriptiontextbox" rows="4" placeholder="Transcript will appear here..." :value=transcriptiondefault></textarea>
+			<!-- Button for saving transcription (only appears if transcription box has a value) -->
+			<button v-if="transcriptiondefault" @click="saveTranscription" id="savetranscriptionbutton" type="button" name="savetranscriptionbutton"><span class="material-icons">save</span> Save Transcription</button>
 			<input type="text" id="searchbar" name="searchbar" placeholder="Search transcription">
 
 		</div>
 		<div class="column2-1 text-center">			
-			<!-- <h1>Column 2-1</h1> -->
-			
-			<div class="savedtranscription" v-for="transcript in transcriptions" :key="transcript.id">
+			<div class="savedtranscription" v-for="transcript in transcriptions.slice(0,3)" :key="transcript.id">
 				<transcriptionbox :transcription="transcript" v-on:deletetranscript="deleteTranscription($event)"></transcriptionbox>
 			</div>
-			
-
 		</div>
 		<div class="column2-2 text-center">
-			<!-- <h1>Column 2-2</h1> -->
+			<div class="savedtranscription" v-for="transcript in transcriptions.slice(3,6)" :key="transcript.id">
+				<transcriptionbox :transcription="transcript" v-on:deletetranscript="deleteTranscription($event)"></transcriptionbox>
+			</div>
 		</div>
 		<div class="column2-3 text-center">
-			<!-- <h1>Column 2-3</h1> -->
+			<div class="savedtranscription" v-for="transcript in transcriptions.slice(6,9)" :key="transcript.id">
+				<transcriptionbox :transcription="transcript" v-on:deletetranscript="deleteTranscription($event)"></transcriptionbox>
+			</div>
 		</div>
 	</main>
 	<script src="javascript.js"></script>

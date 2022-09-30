@@ -1,12 +1,14 @@
 /* content layout */
 main {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-auto-columns: 1fr;
+	grid-auto-flow: column;
 	grid-template-areas: 
 		"h1 h1 h2"
 		"a a a"
 		"b c d";
 	margin: 10px 10px;
+		
 }
 
 /* utility classes */
@@ -83,6 +85,21 @@ main {
 		font-weight: bold;
 		text-decoration: underline;
 	}
+
+	.column2-1 {
+		grid-area: b;
+
+	}
+
+	.column2-2 {
+		grid-area: b;
+	}
+
+	.column2-3 {
+		grid-area: b;
+	}
+
+
 }
 	
 /* navbar desktop and tablet */
@@ -162,6 +179,7 @@ a {
 
 .column2-1 {
 	grid-area: b;
+
 }
 
 .column2-2 {
@@ -243,6 +261,8 @@ button#transcribebutton:hover {
 
 .savedtranscription {
 	width: auto;
+	margin-left: 10px;
+	margin-right: 10px;
 	background-color: #d8d8d837;
 	border-radius: 10px;
 	margin-bottom: 20px;
